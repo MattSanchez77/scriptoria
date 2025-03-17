@@ -23,3 +23,28 @@ if (percentage > 80){
 } else {
     console.log(`week ${week}:${weeklyplants}% full - Plant More`)
 }
+// Part 2
+
+let newStartingplants = 100;
+let totalWeeks = 10;
+let newTotalPlants = newStartingplants * (2 ** totalWeeks);
+let totalSpace = newTotalPlants * spacePerPlant // 81920m
+let newRadius = Math.sqrt(totalSpace / PI)
+
+console.log(`Total plants after ${totalWeeks} weeks: ${newTotalPlants}`);
+console.log(`total Space Required: $(totalSpace)m`);
+console.log(`New Radius: ${newRadius}m`);
+
+//Part 3
+
+try{
+    let spaceRequired = newStartingplants * spacePerPlant;
+    if(spaceRequired > area) throw Error('Not Enough Space, cannot accomadate')
+    console.log(`Garden does not have enough space to plant ${newStartingplants}plants);`)
+
+} catch (err) {
+    console.error(message)
+}
+
+
+
